@@ -247,63 +247,40 @@ a {
   margin: 0 4px;
 }
 
-.git-log {
+.focus-list {
+  border-top: 1px solid var(--border);
+}
+
+.focus-item {
+  padding: 26px 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.focus-heading {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 32px;
-  border: 1px solid var(--border);
-  background: var(--surface);
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 10px;
 }
 
-.git-entry {
-  display: grid;
-  grid-template-columns: 72px 1fr auto;
-  gap: 16px;
-  align-items: center;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
-}
-
-.git-entry:last-child {
-  border-bottom: none;
-}
-
-.git-entry:hover {
-  background: var(--surface-strong);
-}
-
-.git-hash {
-  color: var(--accent);
+.focus-index {
+  color: var(--prompt);
   font-size: 11px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
 }
 
-.git-msg {
+.focus-title {
   color: var(--text);
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-.git-day {
+.focus-desc {
+  max-width: 720px;
   color: var(--muted);
-  font-size: 11px;
-  white-space: nowrap;
-}
-
-.log-link {
-  display: inline-block;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--border);
-  color: var(--accent);
-  font-size: 12px;
-  text-decoration: none;
-  transition: border-color 0.2s;
-}
-
-.log-link:hover {
-  border-color: var(--accent);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
 }
 
 footer {
@@ -358,13 +335,5 @@ footer {
 
   .stack-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .git-entry {
-    grid-template-columns: 60px 1fr;
-  }
-
-  .git-day {
-    display: none;
   }
 }

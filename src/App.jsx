@@ -20,13 +20,23 @@ const projects = [
   },
 ];
 
-const gitEntries = [
-  { hash: 'a3f92c1', message: 'Spring Boot 첫 서버 오픈, 마이크로서비스 연결 시도', day: 'Day 23' },
-  { hash: '7d1e048', message: 'Supabase 연동, 방문자 카운터 구현', day: 'Day 23' },
-  { hash: 'c892bb3', message: '예은의 시선 배포, GitHub Pages 연결', day: 'Day 22' },
-  { hash: 'f410da2', message: 'HTML / CSS 학습 시작', day: 'Day 18' },
-  { hash: '2b7a19e', message: 'MyBatis, 디자인패턴 완료', day: 'Day 14' },
-  { hash: 'e501fc0', message: 'Java, DB, JDBC, SQL 학습', day: 'Day 01' },
+const focusItems = [
+  {
+    title: 'API Design',
+    description: '쓰는 사람 입장에서 읽기 쉬운 요청과 응답 구조를 만드는 데 집중합니다.',
+  },
+  {
+    title: 'Exception Handling',
+    description: '예외를 숨기지 않고, 어디서 왜 실패했는지 드러나는 구조를 선호합니다.',
+  },
+  {
+    title: 'Database Flow',
+    description: '기능 구현만 보지 않고 SQL, 데이터 흐름, 성능까지 같이 확인하려고 합니다.',
+  },
+  {
+    title: 'Small Iterations',
+    description: '작게 만들고, 기록하고, 다시 개선하는 방식으로 백엔드를 쌓아가고 있습니다.',
+  },
 ];
 
 const statusLines = [
@@ -191,24 +201,23 @@ function App() {
           </div>
         </section>
 
-        <section className="section fade-section" id="log">
+        <section className="section fade-section" id="focus">
           <p className="section-title">
             <span className="prompt">$</span>
             {' '}
-            git log --oneline
+            cat ./what-i-focus-on.md
           </p>
-          <div className="git-log">
-            {gitEntries.map((entry) => (
-              <div className="git-entry" key={`${entry.hash}-${entry.day}`}>
-                <span className="git-hash">{entry.hash}</span>
-                <span className="git-msg">{entry.message}</span>
-                <span className="git-day">{entry.day}</span>
+          <div className="focus-list">
+            {focusItems.map((item, index) => (
+              <div className="focus-item" key={item.title}>
+                <div className="focus-heading">
+                  <span className="focus-index">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="focus-title">{item.title}</span>
+                </div>
+                <p className="focus-desc">{item.description}</p>
               </div>
             ))}
           </div>
-          <a className="log-link" href="https://instagram.com/songkyeongyong.be" target="_blank" rel="noreferrer">
-            @songkyeongyong.be ↗
-          </a>
         </section>
       </main>
 
