@@ -123,7 +123,7 @@ function App() {
               {' '}
               whoami
             </p>
-            <p className="terminal-output">
+            <p className="terminal-output hero-copy hero-name">
               송경용
               {' '}
               <span className="muted">/ Kyeongyong Song</span>
@@ -133,7 +133,7 @@ function App() {
               {' '}
               cat about.txt
             </p>
-            <p className="terminal-output">개발과 예술 사이를 탐구 중입니다.</p>
+            <p className="terminal-output hero-copy hero-about">개발과 예술 사이를 탐구 중입니다. 🚀</p>
             <p className="terminal-line">
               <span className="prompt">$</span>
               {' '}
@@ -222,9 +222,7 @@ function App() {
       </main>
 
       <footer>
-        <p>
-          송경용 · 2026 · <span className="muted">built with react</span>
-        </p>
+        <p>송경용 · 2026</p>
       </footer>
     </>
   );
