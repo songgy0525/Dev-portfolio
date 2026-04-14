@@ -5,13 +5,14 @@
 }
 
 :root {
-  --bg: #f2f2f2;
-  --surface: #ebebeb;
-  --border: #dedede;
-  --text: #1c1c1c;
-  --muted: #a0a0a0;
-  --prompt: #555555;
-  --accent: #1c1c1c;
+  --bg: #f5f3ee;
+  --surface: #ece8df;
+  --surface-strong: #e2ddd2;
+  --border: #d6d0c4;
+  --text: #181a1f;
+  --muted: #7f7a72;
+  --prompt: #4f5f73;
+  --accent: #243447;
 }
 
 html { scroll-behavior: smooth; }
@@ -21,6 +22,7 @@ body {
   color: var(--text);
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 300;
+  background-image: radial-gradient(circle at top, rgba(79, 95, 115, 0.08), transparent 38%);
 }
 
 /* ── Header ── */
@@ -34,7 +36,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(242, 242, 242, 0.88);
+  background: rgba(245, 243, 238, 0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -57,7 +59,8 @@ body {
 .dot {
   width: 6px;
   height: 6px;
-  background: var(--prompt);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(36, 52, 71, 0.08);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -140,8 +143,8 @@ body {
 }
 
 .links a:hover {
-  color: var(--prompt);
-  border-color: var(--prompt);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ── Section ── */
@@ -177,7 +180,7 @@ body {
 }
 
 .stack-item:hover {
-  background: var(--surface);
+  background: var(--surface-strong);
   color: var(--text);
 }
 
@@ -194,7 +197,7 @@ body {
 }
 
 .project-card:last-child { border-bottom: 1px solid var(--border); }
-.project-card:hover { opacity: 0.55; }
+.project-card:hover { opacity: 0.72; }
 
 .project-top {
   display: flex;
@@ -203,7 +206,7 @@ body {
 }
 
 .project-name { font-size: 1rem; font-weight: 500; }
-.project-arrow { color: var(--muted); }
+.project-arrow { color: var(--prompt); }
 
 .project-desc {
   font-size: 12px;
@@ -250,11 +253,11 @@ body {
 }
 
 .git-entry:last-child { border-bottom: none; }
-.git-entry:hover { background: var(--bg); }
+.git-entry:hover { background: var(--surface-strong); }
 
 .git-hash {
   font-size: 11px;
-  color: var(--prompt);
+  color: var(--accent);
   letter-spacing: 0.03em;
 }
 
@@ -273,14 +276,14 @@ body {
 
 .log-link {
   font-size: 12px;
-  color: var(--prompt);
+  color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--border);
   padding-bottom: 2px;
   transition: border-color 0.2s;
 }
 
-.log-link:hover { border-color: var(--prompt); }
+.log-link:hover { border-color: var(--accent); }
 
 /* ── Footer ── */
 footer {
