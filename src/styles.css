@@ -26,6 +26,8 @@ body {
   color: var(--text);
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -137,6 +139,8 @@ a {
 }
 
 .links a {
+  display: inline-flex;
+  align-items: center;
   padding-bottom: 1px;
   border-bottom: 1px solid transparent;
   font-size: 12px;
@@ -324,16 +328,138 @@ footer {
   .hero,
   .section,
   footer {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: 5.5vw;
+    padding-right: 5.5vw;
   }
 
   .site-header {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding: 14px 5.5vw;
+  }
+
+  .site-name,
+  .site-status {
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 108px;
+    padding-bottom: 64px;
+  }
+
+  .terminal-block {
+    margin-bottom: 36px;
+  }
+
+  .terminal-line {
+    margin-top: 16px;
+    font-size: 11px;
+  }
+
+  .terminal-output {
+    font-size: clamp(1.05rem, 7vw, 1.55rem);
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+  }
+
+  .terminal-output.typing {
+    min-height: 18px;
+    font-size: 11px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .links a {
+    min-height: 28px;
+    font-size: 11px;
+  }
+
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+    font-size: 11px;
   }
 
   .stack-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stack-item {
+    padding: 16px 12px;
+    font-size: 11px;
+  }
+
+  .project-card {
+    padding: 24px 0;
+  }
+
+  .project-top {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .project-name {
+    font-size: 0.92rem;
+  }
+
+  .project-desc {
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 1.75;
+  }
+
+  .project-tags span {
+    font-size: 10px;
+  }
+
+  .focus-item {
+    padding: 20px 0 18px;
+  }
+
+  .focus-heading {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .focus-index {
+    font-size: 10px;
+  }
+
+  .focus-title {
+    font-size: 13px;
+  }
+
+  .focus-desc {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  footer {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-top {
+    flex-direction: column;
+  }
+
+  .project-arrow {
+    font-size: 12px;
   }
 }
