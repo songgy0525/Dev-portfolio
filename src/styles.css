@@ -106,18 +106,20 @@ a {
 }
 
 .hero-copy {
-  font-family: 'Noto Sans KR', sans-serif;
-  letter-spacing: -0.04em;
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.055em;
   word-break: keep-all;
 }
 
 .hero-name {
   line-height: 1.25;
+  font-weight: 700;
 }
 
 .hero-about {
-  max-width: 18ch;
-  line-height: 1.45;
+  line-height: 1.4;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .terminal-output.typing {
@@ -383,12 +385,14 @@ footer {
   }
 
   .hero-copy {
-    letter-spacing: -0.045em;
+    letter-spacing: -0.06em;
   }
 
   .hero-about {
-    max-width: 11ch;
-    line-height: 1.55;
+    max-width: none;
+    font-size: clamp(0.98rem, 5.8vw, 1.36rem);
+    line-height: 1.35;
+    white-space: nowrap;
   }
 
   .terminal-output.typing {
