@@ -2,13 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 
 const stackItems = [
   { emoji: '☕', label: 'Java' },
-  { emoji: '🗄️', label: 'SQL' },
-  { emoji: '🔌', label: 'JDBC' },
-  { emoji: '🗺️', label: 'MyBatis' },
   { emoji: '🍃', label: 'Spring Boot' },
+  { emoji: '🗺️', label: 'MyBatis' },
+  { emoji: '🔗', label: 'JPA' },
+  { emoji: '🗄️', label: 'MySQL' },
+  { emoji: '🔌', label: 'JDBC' },
+  { emoji: '🔄', label: 'REST API' },
+  { emoji: '🔌', label: 'WebSocket' },
   { emoji: '🎨', label: 'HTML / CSS' },
+  { emoji: '⚡', label: 'JavaScript' },
   { emoji: '🐙', label: 'Git' },
-  { emoji: '⚡', label: 'Supabase' },
 ];
 
 const projects = [
@@ -177,6 +180,7 @@ function App() {
           </div>
         </section>
 
+        {/* 프로젝트 섹션 - 추후 추가 예정
         <section className="section fade-section" id="projects">
           <p className="section-title">
             <span className="prompt">$</span>
@@ -200,6 +204,7 @@ function App() {
             ))}
           </div>
         </section>
+        */}
 
         <section className="section fade-section" id="focus">
           <p className="section-title">
