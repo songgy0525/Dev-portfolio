@@ -1,51 +1,47 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { projects } from './data/projects';
 
 const stackItems = [
   { emoji: '☕', label: 'Java' },
   { emoji: '🍃', label: 'Spring Boot' },
-  { emoji: '🗺️', label: 'MyBatis' },
-  { emoji: '🔗', label: 'JPA' },
-  { emoji: '🗄️', label: 'MySQL' },
-  { emoji: '🔌', label: 'JDBC' },
-  { emoji: '🔄', label: 'REST API' },
-  { emoji: '🔌', label: 'WebSocket' },
-  { emoji: '🎨', label: 'HTML / CSS' },
-  { emoji: '⚡', label: 'JavaScript' },
-  { emoji: '🐙', label: 'Git' },
-];
-
-const projects = [
-  {
-    href: 'https://songgy0525.github.io/neeeeun',
-    name: '예은의 시선',
-    description: '사진 아카이브 웹사이트.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Supabase'],
-  },
+  { emoji: '🔗', label: 'JPA / Hibernate' },
+  { emoji: '🔐', label: 'Spring Security' },
+  { emoji: '🐘', label: 'PostgreSQL' },
+  { emoji: '🔴', label: 'Redis' },
+  { emoji: '🐳', label: 'Docker' },
+  { emoji: '☁️', label: 'Oracle Cloud' },
+  { emoji: '🔀', label: 'Git / GitHub' },
+  { emoji: '⚛️', label: 'React / Next.js' },
 ];
 
 const focusItems = [
   {
-    title: 'API Design',
-    description: '쓰는 사람 입장에서 읽기 쉬운 요청과 응답 구조를 만드는 데 집중합니다.',
+    title: 'Payment Integrity',
+    description:
+      'PG 장애/중복 요청 상황에서도 결제 상태가 일관되게 수렴하도록 상태 모델과 트랜잭션 경계를 설계합니다.',
   },
   {
-    title: 'Exception Handling',
-    description: '예외를 숨기지 않고, 어디서 왜 실패했는지 드러나는 구조를 선호합니다.',
+    title: 'Auth & Security',
+    description:
+      '세션/JWT/OAuth2 예외 케이스를 사전에 정의하고, 권한 변경이 즉시 반영되는 인증 체계를 구축합니다.',
   },
   {
-    title: 'Database Flow',
-    description: '기능 구현만 보지 않고 SQL, 데이터 흐름, 성능까지 같이 확인하려고 합니다.',
+    title: 'Performance Diagnosis',
+    description:
+      '부하 테스트로 병목을 재현하고, 실행 계획과 지표로 원인을 특정해 수치 기반으로 개선합니다.',
   },
   {
-    title: 'Small Iterations',
-    description: '작게 만들고, 기록하고, 다시 개선하는 방식으로 백엔드를 쌓아가고 있습니다.',
+    title: 'Operational Safety',
+    description:
+      '이벤트 유실·다중 인스턴스 중복 실행 등 운영 환경의 실패 경로를 미리 막는 안전장치를 설계합니다.',
   },
 ];
 
 const statusLines = [
-  'building interfaces with intent',
-  'learning in public, shipping in small steps',
-  'currently available for collaboration',
+  'designing payment pipelines that survive failures',
+  'building auth systems that close every edge case',
+  'currently available for backend opportunities',
 ];
 
 function useTypingText(lines, typingSpeed = 70, pauseMs = 1500) {
@@ -136,7 +132,9 @@ function App() {
               {' '}
               cat about.txt
             </p>
-            <p className="terminal-output hero-copy hero-about">개발과 예술 사이를 탐구 중입니다. 🚀</p>
+            <p className="terminal-output hero-copy hero-about">
+              결제·인증·성능 백엔드를 설계하고 운영합니다.
+            </p>
             <p className="terminal-line">
               <span className="prompt">$</span>
               {' '}
@@ -157,10 +155,7 @@ function App() {
             <a href="https://github.com/songgy0525" target="_blank" rel="noreferrer">
               GitHub ↗
             </a>
-            <a href="mailto:morning0525@naver.com">Email ↗</a>
-            <a href="https://instagram.com/songkyeongyong.be" target="_blank" rel="noreferrer">
-              Instagram ↗
-            </a>
+            <a href="mailto:kysong525@gmail.com">Email ↗</a>
           </div>
         </section>
 
@@ -180,7 +175,6 @@ function App() {
           </div>
         </section>
 
-        {/* 프로젝트 섹션 - 추후 추가 예정
         <section className="section fade-section" id="projects">
           <p className="section-title">
             <span className="prompt">$</span>
@@ -189,22 +183,28 @@ function App() {
           </p>
           <div className="project-list">
             {projects.map((project) => (
-              <a className="project-card" href={project.href} key={project.name} target="_blank" rel="noreferrer">
+              <Link
+                className="project-card"
+                to={`/projects/${project.id}`}
+                key={project.id}
+              >
                 <div className="project-top">
-                  <span className="project-name">{project.name}</span>
+                  <div>
+                    <span className="project-name">{project.name}</span>
+                    <span className="project-subtitle"> — {project.subtitle}</span>
+                  </div>
                   <span className="project-arrow">↗</span>
                 </div>
-                <p className="project-desc">{project.description}</p>
+                <p className="project-desc">{project.summary}</p>
                 <div className="project-tags">
                   {project.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
-        */}
 
         <section className="section fade-section" id="focus">
           <p className="section-title">
