@@ -133,7 +133,7 @@ function App() {
               cat about.txt
             </p>
             <p className="terminal-output hero-copy hero-about">
-              결제·인증·성능 백엔드를 설계하고 운영합니다.
+              백엔드 개발자 송경용입니다.
             </p>
             <p className="terminal-line">
               <span className="prompt">$</span>
